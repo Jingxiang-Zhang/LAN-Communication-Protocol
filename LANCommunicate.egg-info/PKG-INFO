@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: LANCommunicate
+Version: 0.1
+Summary: project made by ZJX -- CHINA, CAU, CIEE, major in CS, grade 2017
+Home-page: https://github.com
+Author: Ethan_TheMilkyWay
+Author-email: 1967527237@qq.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: python LAN auto data transmission
+Platform: UNKNOWN
+Classifier: Topic :: Software Development
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
