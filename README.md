@@ -6,7 +6,9 @@ After learning ad hoc networks, OSPF and RIP protocol running in router, MQTT an
 
 In my graduation project, I need to transfer data and command between on a local area network (LAN), in order to control other devise. If the central server is a high-performance computer, while user's computer is a low-performance computer, as a user, I want to execute a heavy computational command, I will need to copy my python code into server and run it on the server side. Therefore, I wish to put the function in the server in advance, and anyone any device on LAN can call that function conveniently.
 
-![sketch](:UN_4_GP_NP/sketch.png){:data-align="center"}
+<div align="center">
+  <img src="https://github.com/Jingxiang-Zhang/LAN-Communication-Protocol/blob/main/img/sketch.png">
+</div>
 
 For example, in the image above, device A have a heavy computational function A, device B or C can call function A by a single line of code.
 
@@ -14,7 +16,9 @@ Before moving on, I have to admit that this is not a general problems. Even if m
 
 The execution sequence diagram of the protocol is shown below. When the protocol is enabled on both devices A and B, device A registers function F first. At this time, device B can receive the address of device A in the LAN and execute the function F and store it in the function table. When device B uses the call function to call F, it only needs to pass in a function name "F" and the corresponding parameters to complete the function call. 
 
-![sequence diagram](:UN_4_GP_NP/sequence.png){:data-align="center"}
+<div align="center">
+  <img src="https://github.com/Jingxiang-Zhang/LAN-Communication-Protocol/blob/main/img/sequence.png">
+</div>
 
 The function is non-blocking function, that is, the program can continue execution after the function is called, but the result of execution is not obtained, because it need to be execute in the other device. The 'call' function returns an exe_id as the function's execution ID number, which is used to read the results of the execution. Device B can use the 'join' method to pass in an exe_id number and block the thread until the execution of function F is complete, to ensure that device B, which calls function F, can obtain the execution result. 
 
@@ -95,17 +99,23 @@ After receiving the data of type callback, the recipient stores it in the functi
 
 Class inheritance diagram is shown below. NatConnector in the core part inherits the base class of data Transmit and data Receiver. The remaining class are the static module for storing static variables, the net_tools module for providing additional network functionality, and the LANException module for error handling
 
-![class diagram](:UN_4_GP_NP/class.png){:data-align="center"}
+<div align="center">
+  <img src="https://github.com/Jingxiang-Zhang/LAN-Communication-Protocol/blob/main/img/class.png">
+</div>
 
 This is the main structure of the project
 
-![main structure](:UN_4_GP_NP/structure.png){:data-align="center"}
+<div align="center">
+  <img src="https://github.com/Jingxiang-Zhang/LAN-Communication-Protocol/blob/main/img/structure.png">
+</div>
 
 #### Data Packet
 
 Here is the packet captured by wireshark:
 
-![data packet](:UN_4_GP_NP/datagram.png){:data-align="center"}
+<div align="center">
+  <img src="https://github.com/Jingxiang-Zhang/LAN-Communication-Protocol/blob/main/img/datagram.png">
+</div>
 
 ### Extensible Function
 
